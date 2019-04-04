@@ -1,0 +1,34 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>{% block title %} Job Board {% endblock %}</title> 
+
+
+    {% include 'head_css.html' %}
+
+  </head>
+  <body>
+    {% include 'nav_bar.html' %}
+
+
+
+<main role="main" class="container">
+
+    {% block jumbotron%}
+
+    {% endblock %}
+
+    {%block content %}
+    {% endblock %}
+
+ 
+</main>
+{% include 'footer.html' %}
+{% include 'javascript.html' %}
+
+</body>
+</html>

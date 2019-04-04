@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %} 
+{% load staticfiles %}
+
+
+    {% block title %}Home |{{ block.super }}{% endblock %}
+
+{% block jumbotron%}
+<div class="jumbotron">
+
+    <div class="row">
+        <div class="col-md-6 offset-md-0.5">
+            <h1>Job Board</h1>            
+            <p class="lead">
+                    Find the job that fits your life. Search, Apply & Get Jobs</p>                    
+            <a class="btn btn-lg btn-primary" href="{% url 'job_list' %}" role="button"> Get Searching &raquo;</a>
+        </div>
+   
+    
+        <div class="col-md-3 offset-md-0.5"  >
+            <img src="{%static 'img/jobboard.jpg' %}" height="160">           
+        
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+{%block content %}
+<div class="row">
+    <div class="col-md-4">
+        <h3> Top Jobs</h3>
+            <div class="row">
+                 <img src="{%static 'img/webdsn.jpg' %}" height="100">
+                 <h5 style="padding:10px"> Web Designer</h5> 
+                 <p style="padding-left:20px">A web designer's job duties cover all aspects of creating a website. Upon meeting with clients and assessing their needs, web designers help create and maintain the product.</p>
+            </div>
+            <div class="row">
+                    <img src="{%static 'img/coin.jpg' %}" height="100">
+                    <h5 style="padding:10px"> Jr. Accountant</h5> 
+                    <p style="margin-top: 10px ; padding-left:20px ">Prepare balance sheets, profit and loss statements and other financial reports. Responsibilities also include analyzing trends, costs, revenues, financial commitments and obligations incurred to predict future revenues and expenses.</p>
+               </div>
+     </div>
+    <div class="col-md-4 offset-md-2">
+        <h3> Welcome</h3>
+        <form method='POST' action="" >{% csrf_token %}
+            {{ form|crispy }}
+            <!-- form with crispy -->
+            <input type="submit" class="btn btn-primary" value="Log In"/>
+        </form>
+    </div>
+</div>
+{% endblock %}
