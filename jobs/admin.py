@@ -11,7 +11,7 @@ class SignUpAdmin(admin.ModelAdmin):
 admin.site.register(SignUp , SignUpAdmin)
 
 class JobUp(admin.ModelAdmin):
-    list_display = ["title", "company_name" , "description", "timestamp"]
+    list_display = ["title", "company_name" ,"description", "timestamp"]
     class Meta:        
         model = Job
 admin.site.register(Job , JobUp)

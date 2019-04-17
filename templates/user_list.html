@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title%}
+Jobs by {{ user.username }} 
+{% endblock %}
+
+{% block content%}
+{% if latest_list %}
+
+{% for obj in latest_list %} <!--for loop-->    
+                               
+<div class="row">
+     <div class="col-md-12 ">
+       <div class="thumbnail">
+         
+         <div class="caption">
+           <h3><a href='{% url "detail" id=obj.id %}'> {{obj.title}}</a> <small>{{obj.timestamp|timesince}} ago </small></h3>           
+           <p>{{obj.description|linebreaks|truncatechars:120}}</p>
+           <p><a href='{% url "detail" id=obj.id %}' class="btn btn-primary" role="button">View</a></p>
+         </div>
+       </div>
+     </div>
+     <hr>
+ </div>
+ <br>
+ {% endfor %}   
+
+{% else %}
+<p>No jobs are available.</p>
+{% endif %}
+{% endblock %}

@@ -15,6 +15,7 @@ class Job(models.Model):
     company_name = models.CharField(max_length=100)
     description = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False )
+    
 
     def __str__(self): #unicode
         return self.title
