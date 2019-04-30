@@ -7,6 +7,8 @@ Jobs by {{ user.username }}
 {% block content%}
 {% if latest_list %}
 
+<h3>Jobs by {{ user.username }} </h3> <br>
+
 {% for obj in latest_list %} <!--for loop-->    
                                
 <div class="row">
@@ -14,9 +16,9 @@ Jobs by {{ user.username }}
        <div class="thumbnail">
          
          <div class="caption">
-           <h3><a href='{% url "detail" id=obj.id %}'> {{obj.title}}</a> <small>{{obj.timestamp|timesince}} ago </small></h3>           
+           <h3><a href='{% url "userpost" id=obj.id %}'> {{obj.title}}</a> <small>{{obj.timestamp|timesince}} ago </small></h3>           
            <p>{{obj.description|linebreaks|truncatechars:120}}</p>
-           <p><a href='{% url "detail" id=obj.id %}' class="btn btn-primary" role="button">View</a></p>
+           <p><a href='{% url "userpost" id=obj.id %}' class="btn btn-primary" role="button">View</a></p>
          </div>
        </div>
      </div>

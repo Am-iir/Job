@@ -101,6 +101,15 @@ def job_detail(request,id=None): #Detail retrieve
    }
    return render(request,"job_detail.html",context)
 
+def user_posted(request,id=None): #Detail retrieve  
+
+   instance =get_object_or_404(Job , id=id)
+   context = {       
+      "title":instance.title,
+      "instance":instance
+   }
+   return render(request,"user_posted.html",context)
+
 def job_update(request,id=None): #Update
    
    instance =get_object_or_404(Job, id=id)

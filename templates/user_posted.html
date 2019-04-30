@@ -15,8 +15,8 @@
      </h1>     
     <b> Posted at : {{instance.timestamp}} </b> <br> <br>
      {{instance.description|linebreaks}}<br>   <!--to include line breaks-->     
-    <!-- <p><a href='{% url "update" id=instance.id %}' class="btn btn-primary" role="button">Edit</a>        
-    <a href='{% url "delete" id=instance.id %}' class="btn btn-primary" role="button">Delete</a></p> -->
+    <p><a href='{% url "update" id=instance.id %}' class="btn btn-primary" role="button">Edit</a>        
+    <a href='{% url "delete" id=instance.id %}' class="btn btn-primary" role="button">Delete</a></p>
      
 </div>
 {% endblock content%}
